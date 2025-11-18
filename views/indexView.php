@@ -6,7 +6,7 @@ require_once "models/NewsRepository.php";
 
 $currentPage = $_GET["page"] ?? 1;
 $countNewsPerPage = 4;
-$pdo = new PDO("mysql:host=localhost;dbname=test_techart","root","");
+require_once "config/dbConnect.php";
 $newsStartIndex = ($currentPage * $countNewsPerPage) - $countNewsPerPage;
 $newsRepository = new NewsRepository($pdo);
 $newsCount = $newsRepository->getNewsCount();

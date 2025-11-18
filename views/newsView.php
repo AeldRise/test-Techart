@@ -4,7 +4,7 @@ use models\News;
 
 require_once "models/News.php";
 require_once "models/NewsRepository.php";
-$pdo = new PDO("mysql:host=localhost;dbname=test_techart","root","");
+require_once "config/dbConnect.php";
 $newsRepository = new NewsRepository($pdo);
 $news = $newsRepository->getNewsById($_GET["news"]);
 $date = strtotime($news->getDate());

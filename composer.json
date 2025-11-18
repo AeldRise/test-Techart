@@ -1,0 +1,15 @@
+{
+    "name": "aeldr/test_techart",
+    "authors": [
+        {
+            "name": "AeldRise",
+            "email": "stormlandser@yandex.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-0": {
+
+        }
+    }
+}
