@@ -1,10 +1,8 @@
 <?php
 
 use models\NewsRepository;
-use views\NewsPage;
 
 require_once "models/NewsRepository.php";
-require_once "views/NewsPage.php";
 
 $currentPage = $_GET["page"] ?? 1;
 $countNewsPerPage = 4;

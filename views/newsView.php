@@ -1,6 +1,5 @@
 <?php
 use models\NewsRepository;
-use views\NewsPage;
 use models\News;
 
 require_once "models/News.php";
