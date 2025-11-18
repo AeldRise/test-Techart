@@ -13,7 +13,6 @@ $newsCount = $newsRepository->getNewsCount();
 $newsArray = $newsRepository->getManyNews($newsStartIndex,$countNewsPerPage);
 $totalPages = ceil($newsCount / $countNewsPerPage);
 $newsRepository = new NewsRepository($pdo);
-$newsPage = new NewsPage($newsRepository);
 $newsStartIndex = ($currentPage * $countNewsPerPage) - $countNewsPerPage;
 $lastNews = $newsRepository->getLastNews();
 ?>
