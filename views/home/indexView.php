@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body class="b-layout" >
-<?php require_once "views/header.php"; ?>
+<?php require_once "views/particles/header.php"; ?>
 <main>
     <a href="/news/">На страницу новостей</a>
 </main>
-<?php require_once "views/footer.php"; ?>
+<?php require_once "views/particles/footer.php"; ?>
 </body>
 </html>

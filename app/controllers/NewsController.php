@@ -16,7 +16,7 @@ class NewsController extends Controller
         $newsArray = $newsRepository->getItemsByOffset($countPerPage, $newsStartIndex);
         $lastNews = $newsRepository->getLastItem();
         $currentPage = $page;
-        require "views/newsIndexView.php";
+        require "views/news/newsIndexView.php";
     }
 
     public function show($id)
@@ -24,6 +24,6 @@ class NewsController extends Controller
         $newsRepository = new NewsRepository();
         $news = $newsRepository->getById($id);
         $date = date("d.m.Y", strtotime($news->getDate()));
-        require "views/newsView.php";
+        require "views/news/newsView.php";
     }
 }
