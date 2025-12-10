@@ -11,9 +11,10 @@ abstract class Repository
 {
     protected $db;
 
-    public function __construct(Database $db)
+    public function __construct()
     {
-        $this->db = $db->getConnection();
+        $database = Database::getInstance();
+        $this->db = $database->getConnection();
     }
 
     public function getDb()
@@ -35,7 +36,5 @@ abstract class Repository
         }
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    
+    }    
 }

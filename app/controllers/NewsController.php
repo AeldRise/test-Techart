@@ -8,8 +8,7 @@ class NewsController extends Controller
 {   
     public function index($page = 1)
     {   
-        $db = new Database();
-        $newsRepository = new NewsRepository($db);
+        $newsRepository = new NewsRepository();
         $countPerPage = 4;
         $newsStartIndex = ($page - 1) * $countPerPage;
         $newsCount = $newsRepository->getCount();
@@ -22,8 +21,7 @@ class NewsController extends Controller
 
     public function show($id)
     {
-        $db = new Database();
-        $newsRepository = new NewsRepository($db);
+        $newsRepository = new NewsRepository();
         $news = $newsRepository->getById($id);
         $date = date("d.m.Y", strtotime($news->getDate()));
         require "views/newsView.php";

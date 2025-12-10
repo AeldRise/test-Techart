@@ -6,9 +6,10 @@ use PDO;
 
 class Database
 {
+    protected static $instance = null;
     protected $connection;
 
-    public function __construct(array $config = NULL)
+    private function __construct(array $config = NULL)
     {   
         if ($config === NULL){
             $config = require "config/dbConnect.php";
@@ -20,5 +21,13 @@ class Database
     public function getConnection()
     {
         return $this->connection;
+    }
+
+    public static function getInstance()
+    {
+        if (self::$instance === NULL) {
+           self::$instance = new self;
+        }
+        return self::$instance;
     }
 }
